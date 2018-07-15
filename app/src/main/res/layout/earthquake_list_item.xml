@@ -17,36 +17,86 @@
     android:layout_width="match_parent"
     android:layout_height="?android:attr/listPreferredItemHeight"
     android:orientation="horizontal"
-    android:paddingEnd="16dp"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingStart="16dp">
+    android:paddingEnd="@dimen/d16dp"
+    android:paddingLeft="@dimen/d16dp"
+    android:paddingRight="@dimen/d16dp"
+    android:paddingStart="@dimen/d16dp">
 
     <TextView
         android:id="@+id/magnitude"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_width="@dimen/d36dp"
+        android:layout_height="@dimen/d36dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/magnitude_circle"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/d16sp"
         tools:text="8.9" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_weight="1"
-        android:layout_height="wrap_content">
-
-    <TextView
-        android:id="@+id/city"
-        android:layout_width="0dp"
+        android:layout_width="269dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/d16dp"
+        android:layout_marginStart="@dimen/d16dp"
         android:layout_weight="1"
-        tools:text="San Francisco, CA" />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/date"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        tools:text="Mar, 6, 2010" />
+        <TextView
+            android:id="@+id/location_offset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/d16dp"
+            android:layout_weight="1"
+            android:textColor="@color/textColorEarthquakeDetails"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAllCaps="true"
+            android:textSize="@dimen/d12sp"
+            tools:text="near the " />
+
+        <TextView
+            android:id="@+id/primary_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/textColorEarthquakeLocation"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textSize="@dimen/d16sp"
+            android:textStyle="bold"
+            tools:text="San Francisco, CA" />
 
     </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/d16dp"
+        android:orientation="vertical"
+        android:layout_marginStart="@dimen/d16dp">
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_gravity="end"
+            android:textSize="@dimen/d12sp"
+            android:textColor="@color/textColorEarthquakeDetails"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="Mar, 6, 2010" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:textColor="@color/textColorEarthquakeDetails"
+            android:layout_gravity="end"
+            android:textSize="@dimen/d12sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="05:51 am" />
+    </LinearLayout>
+    
 </LinearLayout>
